@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <!-- <ngx-ui-loader [loaderId]="'results-loader'"></ngx-ui-loader> -->
+    <div class="accordion" role="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true"
+        aria-controls="collapseExample">
+        <div class="report-header">
+            <h6 class="inline">REPORT NAME</h6>
+            <input type="text" readonly id="reportNameInput" class="inline" name="reportName" [ngModel]="reportName">
+            <div class="inline btn-div">
+                <button form="firstSecForm">GO</button>
+                <button type="button">RESET</button>
+            </div>
+        </div>
+    </div>
+    <div [ngClass]="{'show':showForm, 'collapse': !showForm    }" id="collapseExample">
+         <!-- <div ngClass="" id="collapseExample"> -->
+        <ng-container>
+            <div style="margin-top: 30px;">
+                <app-search-form *ngIf="reportName === 'General - Adhoc Query'" ></app-search-form>
+                <app-search-form-sec *ngIf="reportName==='Report type 2'"></app-search-form-sec>
+            </div>
+        </ng-container>
+    </div>
+    <app-search-results *ngIf="showResults"></app-search-results>
+    <!-- <router-outlet name="results"></router-outlet> -->
+
+</div>

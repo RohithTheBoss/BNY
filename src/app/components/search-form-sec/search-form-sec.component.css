@@ -1,0 +1,62 @@
+.row {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 15px;
+}
+.report-header {
+    height: 50px;
+    margin-top: 30px;
+    background-color: rgb(187, 187, 221);
+    border-top-style: solid;
+    border-top-color: coral;
+  
+    
+}
+.section-header{
+color: brown;
+}
+.inline {
+    display: inline;
+    font-size: small;
+    margin-top: 15px;
+    margin-left: 15px;
+   
+}
+.btn-div {
+    float: right;
+}
+.inputs {
+    width: 200px;
+    height: 25px;
+}
+button {
+    margin-right: 15px;
+    background-color: coral;
+    color: white;
+    border: none
+}
+
+h6 {
+    font-size: smaller;
+    display: inline;
+}
+label {
+    font-size: smaller;
+    font-weight: bold;
+}
+hr {
+    margin-top: 5px;
+
+}
+
+#reportNameInput {
+    margin-left: 200px;
+    width: 200px;
+
+}
+#submit-button {
+    float: right;
+    background-color: coral;
+    color: whitesmoke;
+    display: inline;
+}

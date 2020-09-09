@@ -1,0 +1,21 @@
+.container {
+    margin-top: 15px;
+}
+thead {
+    background-color:  #869aa8;
+}
+button {
+    margin-right: 15px;
+    background-color: coral;
+    color: white;
+    border: none;
+    float: right;
+    display: inline;
+}   
+h6 {
+    display: inline;
+    color: brown;
+}
+hr {
+    margin-top: 5px;
+}

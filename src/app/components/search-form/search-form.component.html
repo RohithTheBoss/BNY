@@ -1,0 +1,202 @@
+<!-- <app-search-results *ngIf="this.dataServ.showResults"></app-search-results> -->
+<div class="container-fluid">
+    <!-- <div class="accordion" role="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+        <div class="report-header">
+            <h6 class="inline">REPORT NAME</h6>
+            <input type="text" readonly id="reportNameInput" class="inline" name="reportName" [ngModel]="reportName">
+            <div class="inline btn-div">
+                <button form="firstSecForm">GO</button>
+                <button type="button">RESET</button>
+            </div>
+        </div>
+    </div> 
+    <div [ngClass]="{'collapse': !showForm, 'show': showForm}" id="collapseExample"> -->
+        <!-- <br> -->
+        <form id="firstSecForm" (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div>
+                <h6 class="section-header">SETTLEMENT PAYMENT DETAILS:</h6>
+                <button type="submit" id="submit-button" [disabled]="!f.valid">submit</button>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="Settlement currency">Settlement currency</label>
+                </div>
+                <div class="col-md-3">
+                    <!-- <input type="text" class="inputs" name="settlementCurrency" ngModel required> -->
+                    <select class="inputs" name="settlementCurrency" ngModel required>
+                        <option disabled selected value style="display: none;"></option>
+                        <option *ngFor="let currency of settlementCurrencyList" [value]="currency">{{currency}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <label for="Settlement Amount From">Settlement Amount From</label>
+                </div>
+                <div class="col-lg-3">
+                    <!-- <input type="text" class="inputs" name="settlementAmountFrom" ngModel required> -->
+                    <select class="inputs" name="settlementAmountFrom" ngModel required>
+                        <option disabled selected value style="display: none;"></option>
+                        <option *ngFor="let fromAmount of settlementAmountFromList" [value]="fromAmount">{{fromAmount}}
+                        </option>
+                    </select>
+                </div>
+                <div class="col-lg-3">
+                    <label for="Settlement Amount To">Settlement Amount To</label>
+                </div>
+                <div class="col-lg-3">
+                    <!-- <input type="text" class="inputs" name="settlementAmountTo" ngModel required> -->
+                    <select class="inputs" name="settlementAmountTo" ngModel required>
+                        <option disabled selected value style="display: none;"></option>
+                        <option *ngFor="let toAmount of settlementAmountToList" [value]="toAmount">{{toAmount}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3">
+                    <label for="Settlement From Date">Settlement From Date</label>
+                </div>
+                <div class="col-lg-3">
+                    <input type="date" class="inputs" name="settlementFromDate" ngModel required>
+                </div>
+                <div class="col-lg-3">
+                    <label for="Settlement To Date">Settlement To Date</label>
+                </div>
+                <div class="col-lg-3">
+                    <input type="date" class="inputs" name="settlementToDate" ngModel required>
+                </div>
+            </div>
+        </form>
+        <br>
+        <h6 class="section-header">INSTRUCTED PAYMENT DETAIL(PAYOUT DETAIL):</h6>
+        <hr>
+        <div class="row">
+            <div class="col-lg-3">
+                <label for="Settlement From Date">Instructed currency</label>
+            </div>
+            <div class="col-lg-3">
+                <input type="text" class="inputs" name="InstructedCurrency">
+            </div>
+            <div class="col-lg-3">
+                <label for="Settlement To Date">FX Payments only</label>
+            </div>
+            <div class="col-lg-3">
+                <input type="checkbox" name="fxPaymentsOnly">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <label for="Instructed Amount From">Instructed Amount From</label>
+            </div>
+            <div class="col-lg-3">
+                <input type="text" class="inputs" name="instructedAmountFrom">
+            </div>
+            <div class="col-lg-3">
+                <label for="Instructed Amount To">Instructed Amount To</label>
+            </div>
+            <div class="col-lg-3">
+                <input type="text" class="inputs" name="instructedAmountTo">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <label for="Instructed From Date">Instructed From Date</label>
+            </div>
+            <div class="col-lg-3">
+                <input type="date" class="inputs" name="instructedFromDate">
+            </div>
+            <div class="col-lg-3">
+                <label for="Instructed To Date">Instructed To Date</label>
+            </div>
+            <div class="col-lg-3">
+                <input type="date" class="inputs" name="instructedToDate">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <label for="Debit Party Account">Debit Party Account</label>
+            </div>
+            <div class="col-lg-3">
+                <input type="number" class="inputs" name="debitPartyAccount">
+            </div>
+            <div class="col-lg-3">
+                <label for="Creadit Party Account">Credit Party Account</label>
+            </div>
+            <div class="col-lg-3">
+                <input type="number" class="inputs" name="creditPartyAccount">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <label for="Debit Party CID">Debit Party CID</label>
+            </div>
+            <div class="col-lg-3">
+                <input type="text" class="inputs" name="debitPartyCid">
+            </div>
+            <div class="col-lg-3">
+                <label for="Credit Party CID">Credit Party CID</label>
+            </div>
+            <div class="col-lg-3">
+                <input type="text" class="inputs" name="creditPartyCid">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <label for="Sending BIC">Sending BIC</label>
+            </div>
+            <div class="col-lg-3">
+                <input type="text" class="inputs" name="sendingBic">
+            </div>
+            <div class="col-lg-3">
+                <label for="Receiving BIC">Receiving BIC</label>
+            </div>
+            <div class="col-lg-3">
+                <input type="text" class="inputs" name="receivingBic">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <label for="Sender's Reference">Sender's Reference</label>
+            </div>
+            <div class="col-lg-3">
+                <input type="text" class="inputs" name="sendersReference">
+            </div>
+            <div class="col-lg-3">
+                <label for="EPH Reference">EPH Reference</label>
+            </div>
+            <div class="col-lg-3">
+                <input type="text" class="inputs" name="ephReference">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <label for="Message Type">Message Type</label>
+            </div>
+            <div class="col-lg-3">
+                <select class="inputs" name="messageType">
+                    <option disabled selected value style="display: none;"></option>
+                    <option *ngFor="let messageType of messageTypes">{{messageType}}</option>
+                </select>
+            </div>
+            <div class="col-lg-3">  
+                <label for="Status">Status</label>
+            </div>
+            <div class="col-lg-3">
+                <select name="status" class="inputs" name="status">
+                    <option disabled selected value style="display: none;"></option>
+                    <option *ngFor="let status of statusList">{{status}}</option>
+                </select>
+            </div>
+        </div>
+    <!-- </div> -->
+    <!-- <app-search-results *ngIf="showResults"></app-search-results>    -->
+</div>

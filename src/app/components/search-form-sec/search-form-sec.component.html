@@ -1,0 +1,57 @@
+<form id="firstSecForm" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div>
+        <h6 class="section-header">SETTLEMENT PAYMENT DETAILS:</h6>
+        <button type="submit" id="submit-button" [disabled]="!f.valid">submit</button>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-3">
+            <label for="Settlement currency">Settlement currency</label>
+        </div>
+        <div class="col-md-3">
+            <!-- <input type="text" class="inputs" name="settlementCurrency" ngModel required> -->
+            <select class="inputs" name="settlementCurrency" ngModel required>
+                <option disabled selected value style="display: none;"></option>
+                <option *ngFor="let currency of settlementCurrencyList" [value]="currency">{{currency}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <label for="Settlement Amount From">Settlement Amount From</label>
+        </div>
+        <div class="col-lg-3">
+            <!-- <input type="text" class="inputs" name="settlementAmountFrom" ngModel required> -->
+            <select class="inputs" name="settlementAmountFrom" ngModel required>
+                <option disabled selected value style="display: none;"></option>
+                <option *ngFor="let fromAmount of settlementAmountFromList" [value]="fromAmount">{{fromAmount}}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-3">
+            <label for="Settlement Amount To">Settlement Amount To</label>
+        </div>
+        <div class="col-lg-3">
+            <!-- <input type="text" class="inputs" name="settlementAmountTo" ngModel required> -->
+            <select class="inputs" name="settlementAmountTo" ngModel required>
+                <option disabled selected value style="display: none;"></option>
+                <option *ngFor="let toAmount of settlementAmountToList" [value]="toAmount">{{toAmount}}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <label for="Settlement From Date">Settlement From Date</label>
+        </div>
+        <div class="col-lg-3">
+            <input type="date" class="inputs" name="settlementFromDate" ngModel required>
+        </div>
+        <div class="col-lg-3">
+            <label for="Settlement To Date">Settlement To Date</label>
+        </div>
+        <div class="col-lg-3">
+            <input type="date" class="inputs" name="settlementToDate" ngModel required>
+        </div>
+    </div>
+</form>

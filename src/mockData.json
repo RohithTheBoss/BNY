@@ -1,0 +1,53 @@
+{
+  "paymentInquirySerch": [
+    {
+        "transactionNo": "1234",
+        "amount": "254",
+        "currency": "INR",
+        "instructedDate": "2020-03-01"
+      },
+      {
+        "transactionNo": "3456",
+        "amount": "314",
+        "currency": "USD",
+        "instructedDate": "2020-06-01"
+      },
+      {
+        "transactionNo": "7890",
+        "amount": "154",
+        "currency": "INR",
+        "instructedDate": "2020-04-01"
+      },
+      {
+        "transactionNo": "2468",
+        "amount": "784",
+        "currency": "USD",
+        "instructedDate": "2020-06-01"
+      }
+  ],
+  "currency": [
+    "INR",
+    "USD",
+    "EUR",
+    "JPY",
+    "GBP",
+    "AUD",
+    "CAD",
+    "CHF",
+    "NZD"
+  ],
+  "settlementAmountFrom": [
+    "Fvalue 1",
+    "Fvalue 2",
+    "Fvalue 3",
+    "Fvalue 4",
+    "Fvalue 5"
+  ],
+  "settlementAmountTo": [
+    "Tvalue 1",
+    "Tvalue 2",
+    "Tvalue 3",
+    "Tvalue 4",
+    "Tvalue 5"
+  ]
+}

@@ -1,0 +1,17 @@
+.navbar {
+    background-color:  #869aa8;
+    height: 52px;
+    width: 100%;
+    /* navbar-light bg-light */
+}
+.nav-link {
+    color: whitesmoke;
+    font-size: medium;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+   
+}
+a{
+    cursor: pointer;
+}

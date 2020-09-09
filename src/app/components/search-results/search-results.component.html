@@ -1,0 +1,32 @@
+<div class="container">
+  <!-- <ngx-ui-loader [loaderId]="'results-loader'"></ngx-ui-loader> -->
+    <div>
+    <h6>SEARCH RESULTS:</h6>
+    <!-- <button type="button" (click) ="navigateToForm()" >Back</button>   -->
+</div>
+
+<hr>
+<div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+      <tr >
+        <th >Transaction Number</th>
+        <th >Amount</th>
+        <th >Currency</th>
+        <th >Instructed Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of searchResultsAPIResponse">
+        <td >{{result.transactionNo}} </td>
+        <td>{{result.amount}}</td>
+        <td>{{result.currency}}</td>
+        <td>{{result.instructedDate}}</td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+
+  
+
+</div>
